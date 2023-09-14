@@ -245,7 +245,7 @@ MonoBehaviour:
   playerSpeed: 5
   decalPrefab: {fileID: 1759197454}
   maxDecals: 100
-  decalSpawnInterval: 0.05
+  decalSpawnInterval: 0.1
 --- !u!54 &626469459
 Rigidbody:
   m_ObjectHideFlags: 0

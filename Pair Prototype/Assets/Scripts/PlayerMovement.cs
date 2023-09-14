@@ -8,30 +8,40 @@ public class PlayerMovement : MonoBehaviour
     public float playerSpeed = 5f;
     // prefab used to represent the trail
     public GameObject decalPrefab;
+    //
+    public float rotationSpeed = 45.0f; 
     // max number of decals spawned before
     public int maxDecals = 10;
     // interval of time when next decal is generated
     public float decalSpawnInterval = 0.05f;
+    // control the turn speed of the player when moving left to right
     // decal counter
     private int currentDecals = 0;
-    // initialize decal generation to true
+    // flag used to determine when to generate a new decal (no overlapping)
     private bool genDecal = true;
-    
+
     void Update()
     {
         //Get input from arrow keys (or WASD) for player movement
-        float veriticalInput = Input.GetAxis("Vertical");
-        float horizontalInput = Input.GetAxis("Horizontal");
+        float veriticalInput = Input.GetAxisRaw("Vertical");
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
         
         // Calculate the direction the player is moving, normalize the movement so
         // that the speed of the player does not change in any direction.
-        Vector3 movement = new Vector3(horizontalInput, 0f, veriticalInput).normalized;
-
+        Vector3 movement = new Vector3( horizontalInput, 0f, veriticalInput).normalized;
         // if input is detected, player moves
         if( movement != Vector3.zero)
         {
+            // store where you want the player to rotate (towards movement)
+            Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
+            // set players rotation to the new rotation (toRotation) starting from the
+            // initial rotation, set how fast we want the player to rotate from the initial
+            // to final rotate transform.
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation,
+                rotationSpeed * Time.deltaTime);
             // set players position to a new position based on player movement
             transform.position = transform.position + movement * playerSpeed * Time.deltaTime;
+
             // check if decal generation is set to true
             if(genDecal)
             {
@@ -43,13 +53,14 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
-
     IEnumerator CreateTrail(Vector3 position)
     {
+        // setting this to false prevents coroutine to be called again
+        // while its active (One at a time)
         genDecal = false;
         if( currentDecals < maxDecals )
         {
-            //wait for specified time before creating another decal
+            //wait for specified time (in seconds) before creating another decal
             yield return new WaitForSeconds( decalSpawnInterval );
             // Create a raycast from the player's position downward to detect the ground.
             Ray ray = new Ray(position, Vector3.down);
@@ -68,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
                 // increment current decal to reach max
                 currentDecals++;
             }
-        } 
-        genDecal=true;
+        }
+            genDecal=true;
     }
 }
