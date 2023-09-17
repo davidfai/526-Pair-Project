@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public TrailMeterManager trailMeterManager;
     // player movement speed
     public float playerSpeed = 5f;
     // prefab used to represent the trail
     public GameObject decalPrefab;
-    //
+    // player rotation speed when turning
     public float rotationSpeed = 45.0f; 
     // max number of decals spawned before
     public int maxDecals = 10;
@@ -16,12 +17,14 @@ public class PlayerMovement : MonoBehaviour
     public float decalSpawnInterval = 0.05f;
     // control the turn speed of the player when moving left to right
     // decal counter
-    private int currentDecals = 0;
+    public int currentDecals = 0;
     // flag used to determine when to generate a new decal (no overlapping)
     private bool genDecal = true;
+    private float raycastDistance = 2;
 
     void Update()
     {
+
         //Get input from arrow keys (or WASD) for player movement
         float veriticalInput = Input.GetAxisRaw("Vertical");
         float horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -53,6 +56,12 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
+
+    /*public void SetPlayerSpeed (float speed)
+    {
+        playerSpeed = speed;
+    }*/
+
     IEnumerator CreateTrail(Vector3 position)
     {
         // setting this to false prevents coroutine to be called again
@@ -71,13 +80,21 @@ public class PlayerMovement : MonoBehaviour
             // of the level ground gameobject (need to add a Y-axis offset since
             // ground plane and decal are on same plane (sometimes not visible to see
             // decal)).
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, raycastDistance, ~LayerMask.GetMask("Decals")))
             {
                 Vector3 decalPosition = hit.point;
                 // Instantiate a decal prefab at the adjusted position.
                 Instantiate(decalPrefab, decalPosition + offset, Quaternion.identity);
                 // increment current decal to reach max
                 currentDecals++;
+                if (trailMeterManager != null)
+                {
+                    trailMeterManager.UpdateTrailPercentage();
+                }else
+                {
+                    Debug.LogWarning("TrailMeterManager reference is missing.");
+                }
+                
             }
         }
             genDecal=true;
