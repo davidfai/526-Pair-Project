@@ -12,24 +12,32 @@ public class PlayerMovement : MonoBehaviour
     // player rotation speed when turning
     public float rotationSpeed = 45.0f; 
     // max number of decals spawned before
-    public int maxDecals = 10;
+    public int maxDecals = 300;
     // interval of time when next decal is generated
-    public float decalSpawnInterval = 0.05f;
+    public float decalSpawnInterval = 0.2f;
     // control the turn speed of the player when moving left to right
     // decal counter
     public int currentDecals = 0;
-    // flag used to determine when to generate a new decal (no overlapping)
-    private bool genDecal = true;
+    // distance of raycast
     private float raycastDistance = 2;
     // List containing all the prefabs trail objects generated to keep track
     private List<GameObject> trailList = new List<GameObject>();
+    // store player's previous position
+    private Vector3 playerPrevPosition;
 
+    private void Start()
+    {
+        // initialize players previous position
+        playerPrevPosition = transform.position;
+    }
     void Update()
     {
 
         //Get input from arrow keys (or WASD) for player movement
         float veriticalInput = Input.GetAxisRaw("Vertical");
         float horizontalInput = Input.GetAxisRaw("Horizontal");
+        // calculate distance the player has traveled
+        float distanceTraveled = Vector3.Distance(transform.position, playerPrevPosition);
         
         // Calculate the direction the player is moving, normalize the movement so
         // that the speed of the player does not change in any direction.
@@ -48,31 +56,20 @@ public class PlayerMovement : MonoBehaviour
             transform.position = transform.position + movement * playerSpeed * Time.deltaTime;
 
             // check if decal generation is set to true
-            if(genDecal)
+            if(distanceTraveled >= decalSpawnInterval)
             {
-                // start a coroutine to delay the decal generation (so that not so many decals
-                // are generated at once, increases performance) and adjust where the decal is 
-                // generated, slightly behind the player game object.
-                StartCoroutine(CreateTrail(transform.position - movement * 0.05f));
+                // Call method to generate a decal to create trail
+                CreateTrail(transform.position - movement * 0.05f);
+                // update previous position
+                playerPrevPosition = transform.position;
             }
 
         }
     }
-
-    /*public void SetPlayerSpeed (float speed)
+    void CreateTrail(Vector3 position)
     {
-        playerSpeed = speed;
-    }*/
-
-    IEnumerator CreateTrail(Vector3 position)
-    {
-        // setting this to false prevents coroutine to be called again
-        // while its active (One at a time)
-        genDecal = false;
         if( currentDecals < maxDecals )
         {
-            //wait for specified time (in seconds) before creating another decal
-            yield return new WaitForSeconds( decalSpawnInterval );
             // Create a raycast from the player's position downward to detect the ground.
             Ray ray = new Ray(position, Vector3.down);
             RaycastHit hit;
@@ -102,7 +99,6 @@ public class PlayerMovement : MonoBehaviour
                 
             }
         }
-            genDecal=true;
     }
 
     public void OnPartOneFailure() 

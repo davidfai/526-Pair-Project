@@ -380,8 +380,8 @@ MonoBehaviour:
   playerSpeed: 5
   decalPrefab: {fileID: 2740402094278259493, guid: 34692bc26d88092499d3c1b2c1e03b32, type: 3}
   rotationSpeed: 720
-  maxDecals: 200
-  decalSpawnInterval: 0.05
+  maxDecals: 300
+  decalSpawnInterval: 0.2
   currentDecals: 0
 --- !u!54 &626469459
 Rigidbody:
