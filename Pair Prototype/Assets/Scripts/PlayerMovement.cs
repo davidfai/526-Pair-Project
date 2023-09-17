@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     // flag used to determine when to generate a new decal (no overlapping)
     private bool genDecal = true;
     private float raycastDistance = 2;
+    // List containing all the prefabs trail objects generated to keep track
+    private List<GameObject> trailList = new List<GameObject>();
 
     void Update()
     {
@@ -84,9 +86,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 Vector3 decalPosition = hit.point;
                 // Instantiate a decal prefab at the adjusted position.
-                Instantiate(decalPrefab, decalPosition + offset, Quaternion.identity);
+                GameObject newDecal = Instantiate(decalPrefab, decalPosition + offset, Quaternion.identity);
+                // add newly generated prefab to list
+                trailList.Add(newDecal);
                 // increment current decal to reach max
                 currentDecals++;
+                // update the trail meter
                 if (trailMeterManager != null)
                 {
                     trailMeterManager.UpdateTrailPercentage();
@@ -98,5 +103,17 @@ public class PlayerMovement : MonoBehaviour
             }
         }
             genDecal=true;
+    }
+
+    public void OnPartOneFailure() 
+    {
+        // delete all decals to remove trail when 
+        // part one failure condition is met
+        foreach ( var obj in trailList )
+        {
+            Destroy( obj );
+        }
+        // delete all references to gameObjects from list
+        trailList.Clear();
     }
 }
