@@ -19,7 +19,7 @@ public class TrailMeterManager : MonoBehaviour
         if (playerMovement != null)
         {
             float percentage = ((float)playerMovement.currentDecals / (float)playerMovement.maxDecals) * 100f;
-            trailPercentText.SetText(percentage.ToString("F0") +"%");
+            trailPercentText.SetText(percentage.ToString("F1") +"%");
         }
     }
 }

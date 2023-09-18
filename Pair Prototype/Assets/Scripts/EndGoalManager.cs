@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,24 +6,15 @@ using UnityEngine;
 public class EndGoalManager : MonoBehaviour
 {
     public PlayerMovement playerMovement;
-    public GameObject goalOne;
-    
-    
-    void Start()
-    {
-        
-    }
+    public GameObject goal;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            playerMovement.endGoalFlagOne = true;
-        }
+        if (!other.CompareTag("Player")){ return;}
+        if (goal == GameObject.Find("endPoint1")) { playerMovement.endGoalFlagOne = true;}
+        if (goal != GameObject.Find("endPoint2")){ return;}
+        if (!playerMovement.endGoalFlagOne){ return;}
+        if (playerMovement.currentDecals != 0) { return;}
+        Debug.Log("Game Complete!"); 
     }
 }

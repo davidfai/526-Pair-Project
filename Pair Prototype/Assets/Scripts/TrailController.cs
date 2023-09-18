@@ -4,30 +4,14 @@ using UnityEngine;
 
 public class TrailController : MonoBehaviour
 {
-    public float normalPlayerSpeed = 5f;
-    public float slowedPlayerSpeed = 2.5f;
-
+    private PlayerMovement playerMovement;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            PlayerMovement playerMovement = other.GetComponent<PlayerMovement>();
-            if (playerMovement != null)
-            {
-                //playerMovement.SetPlayerSpeed(slowedPlayerSpeed);
-            }
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.CompareTag("Player"))
-        {
-            PlayerMovement playerMovement = other.GetComponent<PlayerMovement>();
-            if (playerMovement != null)
-            {
-                //playerMovement.SetPlayerSpeed(normalPlayerSpeed);
-            }
-        }
+        playerMovement = other.GetComponent<PlayerMovement>();
+        if (playerMovement == null){ return;}
+        if (!playerMovement.endGoalFlagOne){ return;}
+        if (!other.CompareTag("Player")){ return;}
+        Destroy(gameObject);
+        playerMovement.currentDecals--;
     }
 }

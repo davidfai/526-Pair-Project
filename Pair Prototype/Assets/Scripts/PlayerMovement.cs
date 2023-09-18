@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public TrailMeterManager trailMeterManager;
+    public EndGoalManager endGoalManager;
     // player movement speed
     public float playerSpeed = 5f;
     // prefab used to represent the trail
@@ -33,13 +34,20 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-
         //Get input from arrow keys (or WASD) for player movement
         float veriticalInput = Input.GetAxisRaw("Vertical");
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         // calculate distance the player has traveled
         float distanceTraveled = Vector3.Distance(transform.position, playerPrevPosition);
-        
+        // update the trail meter
+        if (trailMeterManager != null)
+        {
+            trailMeterManager.UpdateTrailPercentage();
+        }
+        else
+        {
+            Debug.LogWarning("TrailMeterManager reference is missing.");
+        }
         // Calculate the direction the player is moving, normalize the movement so
         // that the speed of the player does not change in any direction.
         Vector3 movement = new Vector3( horizontalInput, 0f, veriticalInput).normalized;
@@ -95,17 +103,13 @@ public class PlayerMovement : MonoBehaviour
                 trailList.Add(newDecal);
                 // increment current decal to reach max
                 currentDecals++;
-                // update the trail meter
-                if (trailMeterManager != null)
-                {
-                    trailMeterManager.UpdateTrailPercentage();
-                }else
-                {
-                    Debug.LogWarning("TrailMeterManager reference is missing.");
-                }
-                
             }
         }
+    }
+
+    public void DeleteTrail(GameObject decal)
+    {
+        Destroy(decal);
     }
 
     public void OnPartOneFailure() 
