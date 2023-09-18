@@ -18,13 +18,14 @@ public class PlayerMovement : MonoBehaviour
     // control the turn speed of the player when moving left to right
     // decal counter
     public int currentDecals = 0;
+    // track if player has arrived to end goal 1 (Point B)
+    public bool endGoalFlagOne = false; 
     // distance of raycast
     private float raycastDistance = 2;
     // List containing all the prefabs trail objects generated to keep track
     private List<GameObject> trailList = new List<GameObject>();
     // store player's previous position
     private Vector3 playerPrevPosition;
-
     private void Start()
     {
         // initialize players previous position
@@ -68,6 +69,12 @@ public class PlayerMovement : MonoBehaviour
     }
     void CreateTrail(Vector3 position)
     {
+        // check if player has reached end goal one (point B)
+        if (endGoalFlagOne)
+        {
+            // if yes then stop generating decals
+            return;
+        }
         if( currentDecals < maxDecals )
         {
             // Create a raycast from the player's position downward to detect the ground.
