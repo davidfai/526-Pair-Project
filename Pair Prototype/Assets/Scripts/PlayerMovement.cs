@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public TrailMeterManager trailMeterManager;
-    public EndGoalManager endGoalManager;
+    public CameraMovement cameraMovement;
     // player movement speed
     public float playerSpeed = 5f;
     // prefab used to represent the trail
@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     private List<GameObject> trailList = new List<GameObject>();
     // store player's previous position
     private Vector3 playerPrevPosition;
+    // calculate movement of player and store
+    private Vector3 movement = Vector3.zero;
     private void Start()
     {
         // initialize players previous position
@@ -48,9 +50,18 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.LogWarning("TrailMeterManager reference is missing.");
         }
-        // Calculate the direction the player is moving, normalize the movement so
-        // that the speed of the player does not change in any direction.
-        Vector3 movement = new Vector3( horizontalInput, 0f, veriticalInput).normalized;
+        // if the camera is flipped for part 2 of game, then invert controls
+        if (cameraMovement.isFlipped)
+        {
+            movement = new Vector3(-horizontalInput, 0f, -veriticalInput).normalized;
+        }
+        else
+        {
+            // Calculate the direction the player is moving, normalize the movement so
+            // that the speed of the player does not change in any direction.
+            movement = new Vector3( horizontalInput, 0f, veriticalInput).normalized;
+        }
+        
         // if input is detected, player moves
         if( movement != Vector3.zero)
         {
@@ -60,7 +71,8 @@ public class PlayerMovement : MonoBehaviour
             // initial rotation, set how fast we want the player to rotate from the initial
             // to final rotate transform.
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation,
-                rotationSpeed * Time.deltaTime);
+            rotationSpeed * Time.deltaTime);
+
             // set players position to a new position based on player movement
             transform.position = transform.position + movement * playerSpeed * Time.deltaTime;
 

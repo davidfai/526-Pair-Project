@@ -6,14 +6,28 @@ public class CameraMovement : MonoBehaviour
 {
     // The target to follow (the player).
     public Transform target;
+    public PlayerMovement playerMovement;
+    public bool isFlipped = false;
     // camera is above player
-    private Vector3 offset = new Vector3 (0, 10, 0);
-
+    private Vector3 offsetPartOne = new Vector3 (0, 10, 3);
+    private Vector3 offsetPartTwo = new Vector3(0, 10, -3);
     // Update is called once per frame
     void LateUpdate()
     {
+        if(playerMovement.endGoalFlagOne && !isFlipped) 
+        {
+            transform.Rotate(180, 180, 0);
+            isFlipped = true;
+        }
 
-        //reposition camera to players position
-        transform.position = target.transform.position + offset;
+        if (isFlipped)
+        {
+            transform.position = target.transform.position + offsetPartTwo;
+        }
+        else
+        {
+            transform.position = target.transform.position + offsetPartOne;
+        }
+        
     }
 }
