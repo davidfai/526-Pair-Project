@@ -9,8 +9,8 @@ public class CameraMovement : MonoBehaviour
     public PlayerMovement playerMovement;
     public bool isFlipped = false;
     // camera is above player
-    private Vector3 offsetPartOne = new Vector3 (0, 10, 3);
-    private Vector3 offsetPartTwo = new Vector3(0, 10, -3);
+    private Vector3 offsetPartOne = new Vector3 (0, 10, 1);
+    private Vector3 offsetPartTwo = new Vector3(0, 10, -1);
     // Update is called once per frame
     void LateUpdate()
     {

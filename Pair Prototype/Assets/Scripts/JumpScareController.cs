@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using Unity.VisualScripting;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
@@ -10,7 +11,9 @@ public class JumpScareController : MonoBehaviour
     public Transform initialPosition;
     public Transform finalPosition;
     public PlayerMovement playerMovement;
+    public AudioSource jumpScareAudio;
     public float jumpScareSpeed = 30f;
+    public float delayTime = 0.05f;
     private float step;
     private bool hasJumpScareOnce = false;
     private bool canJumpScare = false;
@@ -41,9 +44,16 @@ public class JumpScareController : MonoBehaviour
         if (other.CompareTag("Player") && !canJumpScare && !hasJumpScareOnce 
             && playerMovement.endGoalFlagOne)
         {
-            canJumpScare = true;
-            jumpScareNPC.SetActive(true) ;
+            StartCoroutine(DelayScareEvent());
+            jumpScareAudio.Play();
         }
         
+    }
+
+    private IEnumerator DelayScareEvent()
+    {
+        yield return new WaitForSeconds(delayTime);
+        canJumpScare = true;
+        jumpScareNPC.SetActive(true);
     }
 }
