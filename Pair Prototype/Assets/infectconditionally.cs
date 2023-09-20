@@ -20,7 +20,7 @@ public class infectconditionally : MonoBehaviour
         if (infected)
         {
             gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material = infectedmaterial;
-            gameObject.transform.GetChild(1).gameObject.transform.localScale = new Vector3(2,0.05f,2);
+            gameObject.transform.GetChild(1).gameObject.transform.localScale = new Vector3(5,0.05f,5);
             gameObject.transform.GetChild(1).gameObject.tag = "Infected";
            
         }

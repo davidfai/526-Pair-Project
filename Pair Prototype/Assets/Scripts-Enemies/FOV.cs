@@ -52,11 +52,23 @@ public class FOV : MonoBehaviour
 
         }
     }
-    void OnTriggerEnter(Collider other)
+    
+    void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("AAAA");
+            step = 5 * Time.deltaTime;
+            transform.parent.gameObject.transform.GetChild(0).gameObject.transform.position= Vector3.MoveTowards(transform.parent.gameObject.transform.GetChild(0).gameObject.transform.position, other.gameObject.transform.position, step);
+            transform.position = Vector3.MoveTowards(transform.position, other.gameObject.transform.position, step);
+        }
+        
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            transform.parent.gameObject.transform.GetChild(0).gameObject.transform.position =Vector3.MoveTowards(transform.parent.gameObject.transform.GetChild(0).gameObject.transform.position, transform.parent.gameObject.transform.GetChild(0).gameObject.GetComponent<Enemy1up>().startposn,step);
+            transform.position = Vector3.MoveTowards(transform.position, startposn, step); 
         }
     }
 

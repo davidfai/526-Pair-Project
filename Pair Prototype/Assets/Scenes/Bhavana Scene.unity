@@ -515,6 +515,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infected: 1
+  infectedmaterial: {fileID: 2100000, guid: aaa4d81c8272d1e41993121962541500, type: 2}
+  myMaterial: {fileID: 2100000, guid: 13c6a27dbca54d4448b22ac6455754ed, type: 2}
 --- !u!1 &507765864
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,8 +935,8 @@ Transform:
   m_GameObject: {fileID: 1385797159}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.59, y: 1.58, z: -0.4}
-  m_LocalScale: {x: 2, y: 0.05, z: 2}
+  m_LocalPosition: {x: -3.51, y: 1.58, z: -0.4}
+  m_LocalScale: {x: 0, y: 0.05, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 469007695}
@@ -1027,7 +1029,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.56
+  m_Radius: 0.5
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!1 &1617555733
 GameObject:
