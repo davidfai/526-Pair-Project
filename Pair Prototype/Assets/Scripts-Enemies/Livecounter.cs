@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Livecounter : MonoBehaviour
 {
     public GameObject h1, h2, h3;
     public int lives;
+    public Scene losescreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,11 @@ public class Livecounter : MonoBehaviour
                 break;
             case 1:
                 h1.gameObject.SetActive(true);
+                h2.gameObject.SetActive(false);
+                h3.gameObject.SetActive(false);
+                break;
+            case 0:
+                
                 break;
 
         }

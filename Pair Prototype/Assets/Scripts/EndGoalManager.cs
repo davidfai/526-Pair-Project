@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndGoalManager : MonoBehaviour
 {
@@ -31,6 +32,6 @@ public class EndGoalManager : MonoBehaviour
         if (goal != GameObject.Find("endPoint2")){ return;}
         if (!playerMovement.endGoalFlagOne){ return;}
         if (playerMovement.currentDecals != 0) { return;}
-        Debug.Log("Game Complete!"); 
+       
     }
 }
