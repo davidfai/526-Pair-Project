@@ -48,7 +48,7 @@ public class infectconditionally : MonoBehaviour
             gameObject.transform.GetChild(1).gameObject.tag = "Infected";
 
         }
-        else if(!infected && endpoint1.transform.GetComponent<EndGoalManager>().secondhalf)
+        else if(!infected && endpoint1.transform.GetComponent<EndGoalManager>().secondHalf)
         {
         gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material = myMaterial;
         gameObject.transform.GetChild(1).gameObject.transform.localScale = new Vector3(5, 0.05f, 5);

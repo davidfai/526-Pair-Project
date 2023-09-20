@@ -75,7 +75,7 @@ public class FOV : MonoBehaviour
     }
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && endpoint1.transform.GetComponent<EndGoalManager>().secondhalf)
+        if (other.CompareTag("Player") && endpoint1.transform.GetComponent<EndGoalManager>().secondHalf)
         {
             step = 0;
             /*transform.parent.gameObject.transform.GetChild(0).gameObject.transform.position = Vector3.MoveTowards(transform.parent.gameObject.transform.GetChild(0).gameObject.transform.position, startposncyl, step);
