@@ -9,6 +9,7 @@ public class EndGoalManager : MonoBehaviour
     public Light playerLight;
     public Light directionalLight;
     public GameObject goal;
+    public bool secondhalf=false;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class EndGoalManager : MonoBehaviour
             RenderSettings.ambientLight = Color.black;
             playerLight.enabled = true;
             directionalLight.enabled = false;
+            secondhalf = true;
         }
         if (goal != GameObject.Find("endPoint2")){ return;}
         if (!playerMovement.endGoalFlagOne){ return;}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 971506552431425401}
   m_Layer: 3
   m_Name: trail
-  m_TagString: Untagged
+  m_TagString: infection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
