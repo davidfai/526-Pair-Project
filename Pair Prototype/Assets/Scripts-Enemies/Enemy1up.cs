@@ -22,7 +22,7 @@ public class Enemy1up : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (infected && endpoint1.transform.GetComponent<EndGoalManager>().secondhalf)
+       if (infected && endpoint1.transform.GetComponent<EndGoalManager>().secondHalf)
         {
             transform.parent.GetComponent<infectconditionally>().infected = true;
         }
@@ -35,7 +35,7 @@ public class Enemy1up : MonoBehaviour
         {
             infected = true;
         }
-        if (endpoint1.transform.GetComponent<EndGoalManager>().secondhalf && infected && other.CompareTag("Player"))
+        if(endpoint1.transform.GetComponent<EndGoalManager>().secondHalf && infected && other.CompareTag("Player"))
         {
             player.transform.position = Vector3.MoveTowards(player.transform.position, endpoint1.transform.position, step);
             livecounter.GetComponent<Livecounter>().lives -= 1;

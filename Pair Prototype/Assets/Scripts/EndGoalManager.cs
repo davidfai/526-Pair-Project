@@ -7,10 +7,11 @@ using UnityEngine.SceneManagement;
 public class EndGoalManager : MonoBehaviour
 {
     public PlayerMovement playerMovement;
+    public SceneLoader sceneLoader;
     public Light playerLight;
     public Light directionalLight;
     public GameObject goal;
-    public bool secondhalf=false;
+    public bool secondHalf=false;
 
     private void Start()
     {
@@ -27,11 +28,11 @@ public class EndGoalManager : MonoBehaviour
             RenderSettings.ambientLight = Color.black;
             playerLight.enabled = true;
             directionalLight.enabled = false;
-            secondhalf = true;
+            secondHalf = true;
         }
         if (goal != GameObject.Find("endPoint2")){ return;}
         if (!playerMovement.endGoalFlagOne){ return;}
         if (playerMovement.currentDecals != 0) { return;}
-       
+        SceneManager.LoadScene(sceneLoader.sceneName); 
     }
 }

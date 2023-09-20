@@ -3442,6 +3442,7 @@ GameObject:
   - component: {fileID: 553422516}
   - component: {fileID: 553422515}
   - component: {fileID: 553422514}
+  - component: {fileID: 553422519}
   m_Layer: 0
   m_Name: endPoint2
   m_TagString: Untagged
@@ -3462,10 +3463,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 626469458}
+  sceneLoader: {fileID: 553422519}
   playerLight: {fileID: 626469460}
   directionalLight: {fileID: 705507994}
   goal: {fileID: 553422513}
-  secondhalf: 0
+  secondHalf: 0
 --- !u!23 &553422515
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3552,6 +3554,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 927872726}
   m_LocalEulerAnglesHint: {x: 0, y: -179.9, z: 0}
+--- !u!114 &553422519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553422513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb4fc55f4296f940bd18159d7c5b9e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Win Screen
 --- !u!1 &583112708
 GameObject:
   m_ObjectHideFlags: 0
@@ -9161,10 +9176,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 626469458}
+  sceneLoader: {fileID: 0}
   playerLight: {fileID: 626469460}
   directionalLight: {fileID: 705507994}
   goal: {fileID: 1751155728}
-  secondhalf: 0
+  secondHalf: 0
 --- !u!1 &1781925944
 GameObject:
   m_ObjectHideFlags: 0

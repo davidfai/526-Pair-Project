@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Livecounter : MonoBehaviour
 {
     public GameObject h1, h2, h3;
+    public SceneLoader sceneLoader;
     public int lives;
     public Scene losescreen;
     // Start is called before the first frame update
@@ -38,7 +39,7 @@ public class Livecounter : MonoBehaviour
                 h3.gameObject.SetActive(false);
                 break;
             case 0:
-                
+                SceneManager.LoadScene(sceneLoader.sceneName);
                 break;
 
         }
