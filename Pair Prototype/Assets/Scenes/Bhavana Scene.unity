@@ -477,6 +477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 469007695}
+  - component: {fileID: 469007696}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Infected
@@ -501,6 +502,19 @@ Transform:
   - {fileID: 1385797160}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &469007696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469007694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29dfd419bee24cf4bacb0ef43c4112e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infected: 1
 --- !u!1 &507765864
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,8 +915,8 @@ GameObject:
   - component: {fileID: 1385797160}
   - component: {fileID: 1385797163}
   - component: {fileID: 1385797162}
-  - component: {fileID: 1385797161}
   - component: {fileID: 1385797164}
+  - component: {fileID: 1385797165}
   m_Layer: 0
   m_Name: fov
   m_TagString: Untagged
@@ -925,29 +939,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 469007695}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1385797161
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1385797159}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1385797162
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1016,6 +1007,28 @@ MonoBehaviour:
   speed: 3
   step: 1
   timerange: 2
+  infected: 0
+--- !u!135 &1385797165
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385797159}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.56
+  m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!1 &1617555733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,9 +1177,9 @@ GameObject:
   - component: {fileID: 1992464314}
   - component: {fileID: 1992464313}
   - component: {fileID: 1992464312}
-  - component: {fileID: 1992464315}
   - component: {fileID: 1992464316}
   - component: {fileID: 1992464317}
+  - component: {fileID: 1992464318}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Infected
@@ -1239,27 +1252,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 469007695}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1992464315
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1992464309}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 1.8
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!54 &1992464316
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1305,7 +1297,29 @@ MonoBehaviour:
   speed: 3
   step: 1
   timerange: 2
-  infected: 0
+--- !u!136 &1992464318
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992464309}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &2051303934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,7 +1446,6 @@ MonoBehaviour:
   speed: 3
   step: 1
   timerange: 2
-  infected: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

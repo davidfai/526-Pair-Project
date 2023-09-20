@@ -10,7 +10,7 @@ public class Enemy1up : MonoBehaviour
     public float speed = 5;
     public float step = 1;
     public float timerange = 10;
-    public bool infected = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,16 +19,7 @@ public class Enemy1up : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    { if (gameObject.tag == "Infected")
-        {
-            infected = true;
-        }
-        else
-        {
-            var fov = GetComponent<Collider>();
-            fov.isTrigger = false;
-
-        }
+    { 
         step = speed * Time.deltaTime;
         counter += Time.deltaTime;
         if (counter < timerange / 2)
@@ -44,24 +35,10 @@ public class Enemy1up : MonoBehaviour
         {
             counter = 0;
         }
-        if (infected)
-        {
-            var fov = GetComponent<Collider>();
-            fov.isTrigger = true;
-
-
-
-        }
+       
 
         
     }
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("AAAA");
-        }
-    }
-
+    
 
 }

@@ -10,6 +10,7 @@ public class FOV : MonoBehaviour
     public float speed = 5;
     public float step = 1;
     public float timerange = 10;
+    public bool infected = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,29 @@ public class FOV : MonoBehaviour
         {
             counter = 0;
         }
+        if (gameObject.tag == "Infected")
+        {
+            infected = true;
+        }
+        else
+        {
+            infected = false;
+        }
+        if (infected)
+        {
+            var fov = GetComponent<Collider>();
+            fov.isTrigger = true;
 
+
+
+        }
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("AAAA");
+        }
+    }
+
 }
