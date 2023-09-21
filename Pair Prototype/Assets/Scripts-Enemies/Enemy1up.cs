@@ -10,6 +10,7 @@ public class Enemy1up : MonoBehaviour
     public GameObject livecounter;
     public float step = 10;
     public float key = 10;
+    public Material markNPC;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,7 @@ public class Enemy1up : MonoBehaviour
         if (other.CompareTag("infection"))
         {
             infected = true;
+            transform.GetComponent<Renderer>().material = markNPC;
         }
         if(endpoint1.transform.GetComponent<EndGoalManager>().secondHalf && infected && other.CompareTag("Player"))
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FOV : MonoBehaviour
 {
-
+    public GameObject endpoint1;
     public bool infected = false;
     public float step;
     public Vector3 startposn;
@@ -17,6 +17,7 @@ public class FOV : MonoBehaviour
     {
         
         audioSource.Stop();
+        endpoint1 = GameObject.Find("endPoint1");
     }
 
     // Update is called once per frame
@@ -74,7 +75,7 @@ public class FOV : MonoBehaviour
     }
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && endpoint1.transform.GetComponent<EndGoalManager>().secondHalf)
         {
             step = 0;
             /*transform.parent.gameObject.transform.GetChild(0).gameObject.transform.position = Vector3.MoveTowards(transform.parent.gameObject.transform.GetChild(0).gameObject.transform.position, startposncyl, step);

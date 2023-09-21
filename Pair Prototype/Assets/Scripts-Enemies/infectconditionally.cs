@@ -13,11 +13,13 @@ public class infectconditionally : MonoBehaviour
     public float speed = 5;
     public float step = 1;
     public float timerange = 10;
-
+    public GameObject endpoint1;
+    public Material markNPC;
     // Start is called before the first frame update
     void Start()
     {
         counter = 0;
+        endpoint1 = GameObject.Find("endPoint1");
     }
 
     // Update is called once per frame
@@ -46,13 +48,14 @@ public class infectconditionally : MonoBehaviour
             gameObject.transform.GetChild(1).gameObject.tag = "Infected";
 
         }
-        else
+        else if(!infected && endpoint1.transform.GetComponent<EndGoalManager>().secondHalf)
         {
-            gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material = myMaterial;
-            gameObject.transform.GetChild(1).gameObject.transform.localScale = new Vector3(0, 0, 0);
-            gameObject.transform.GetChild(1).gameObject.tag = "NPC";
+        gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material = myMaterial;
+        gameObject.transform.GetChild(1).gameObject.transform.localScale = new Vector3(5, 0.05f, 5);
+        gameObject.transform.GetChild(1).gameObject.tag = "NPC";
 
-        }
+    }
+    
 
 
 
