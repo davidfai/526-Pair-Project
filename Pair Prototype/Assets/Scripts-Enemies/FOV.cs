@@ -55,6 +55,21 @@ public class FOV : MonoBehaviour
 
 
         }
+        if (other.CompareTag("wall"))
+        {
+
+            step = 0;
+            /*transform.parent.gameObject.transform.GetChild(0).gameObject.transform.position = Vector3.MoveTowards(transform.parent.gameObject.transform.GetChild(0).gameObject.transform.position, startposncyl, step);
+            transform.position = Vector3.MoveTowards(transform.position, startposn, step);*/
+            chase = false;
+            transform.parent.gameObject.GetComponent<infectconditionally>().speed = 0;
+            transform.parent.gameObject.transform.position = Vector3.MoveTowards(transform.parent.gameObject.transform.position, transform.parent.gameObject.GetComponent<infectconditionally>().startposn, step);
+
+            audioSource.Stop();
+
+
+
+        }
 
 
     }
