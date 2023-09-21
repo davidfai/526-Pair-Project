@@ -15,6 +15,14 @@ public class infectconditionally : MonoBehaviour
     public float timerange = 10;
     public GameObject endpoint1;
     public Material markNPC;
+    public bool circle=false;
+    public Vector3 posn1;
+    public bool still = false;
+    public Vector3 posn2;
+    public Vector3 posn3;
+    public Vector3 posn4;
+   
+    public int ink = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,21 +33,71 @@ public class infectconditionally : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        step = speed * Time.deltaTime;
-        counter += Time.deltaTime;
-        if (counter < timerange / 2)
+        if (!still)
         {
-            transform.position = Vector3.MoveTowards(transform.position, endposn, step);
+            if (!circle)
+            {
+                step = speed * Time.deltaTime;
+                counter += Time.deltaTime;
+                if (counter < timerange / 2)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, endposn, step);
 
+                }
+                if (counter >= timerange / 2)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, startposn, step);
+                }
+                if (counter >= timerange)
+                {
+                    counter = 0;
+                }
+            }
+            else
+            {
+                step = Time.deltaTime * speed;
+
+                if (transform.position == posn1)
+                {
+
+                    ink = 1;
+
+                }
+                if (transform.position == posn2)
+                {
+                    ink = 2;
+
+                }
+                if (transform.position == posn3)
+                {
+                    ink = 3;
+
+                }
+                if (transform.position == posn4)
+                {
+                    ink = 4;
+
+                }
+
+                switch (ink)
+                {
+                    case 1:
+                        transform.position = Vector3.MoveTowards(transform.position, posn2, step);
+                        break;
+                    case 2:
+                        transform.position = Vector3.MoveTowards(transform.position, posn3, step);
+                        break;
+                    case 3:
+                        transform.position = Vector3.MoveTowards(transform.position, posn4, step);
+                        break;
+                    default:
+                        transform.position = Vector3.MoveTowards(transform.position, posn1, step);
+                        break;
+                }
+
+            }
         }
-        if (counter >= timerange / 2)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, startposn, step);
-        }
-        if (counter >= timerange)
-        {
-            counter = 0;
-        }
+        
 
         if (infected)
         {

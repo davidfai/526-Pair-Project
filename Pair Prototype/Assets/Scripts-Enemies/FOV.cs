@@ -56,6 +56,7 @@ public class FOV : MonoBehaviour
 
         }
 
+
     }
 
     void OnTriggerStay(Collider other)
