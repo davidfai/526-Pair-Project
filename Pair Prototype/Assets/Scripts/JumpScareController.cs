@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using Unity.VisualScripting;
-using UnityEditor.Build.Reporting;
+
 using UnityEngine;
 
 public class JumpScareController : MonoBehaviour
