@@ -16,10 +16,16 @@ public class TrailMeterManager : MonoBehaviour
 
     public void UpdateTrailPercentage()
     {
-        if (playerMovement != null)
+        if (playerMovement == null) { return; }
+        if (!playerMovement.endGoalFlagOne)
         {
-            float percentage = ((float)playerMovement.currentDecals / (float)playerMovement.maxDecals) * 100f;
-            trailPercentText.SetText(percentage.ToString("F1") +"%");
+            int distanceLeft = playerMovement.maxDecals - playerMovement.currentDecals;
+            trailPercentText.SetText(distanceLeft.ToString("F0") +"m");
+        }
+        else
+        {
+            int trailToRemove = playerMovement.currentDecals;
+            trailPercentText.SetText(trailToRemove.ToString("F0") + "m");
         }
     }
 }

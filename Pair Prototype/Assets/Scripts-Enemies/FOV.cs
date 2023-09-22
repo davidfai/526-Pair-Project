@@ -15,7 +15,6 @@ public class FOV : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         audioSource.Stop();
         endpoint1 = GameObject.Find("endPoint1");
     }
@@ -47,7 +46,7 @@ public class FOV : MonoBehaviour
         {
 
             audioSource.Play();
-            step = 4 * Time.deltaTime;
+            step = 2.5f * Time.deltaTime;
             transform.parent.gameObject.transform.GetChild(0).gameObject.transform.position = Vector3.MoveTowards(transform.parent.gameObject.transform.GetChild(0).gameObject.transform.position, other.gameObject.transform.position, step);
             transform.position = Vector3.MoveTowards(transform.position, other.gameObject.transform.position, step);
 
@@ -65,7 +64,7 @@ public class FOV : MonoBehaviour
             transform.parent.gameObject.GetComponent<infectconditionally>().speed = 0;
             transform.parent.gameObject.transform.position = Vector3.MoveTowards(transform.parent.gameObject.transform.position, transform.parent.gameObject.GetComponent<infectconditionally>().startposn, step);
 
-            audioSource.Stop();
+            //audioSource.Stop();
 
 
 
@@ -79,7 +78,7 @@ public class FOV : MonoBehaviour
         if (other.CompareTag("Player") && infected)
         {
            
-            step = 4 * Time.deltaTime;
+            step = 2.5f * Time.deltaTime;
             transform.parent.gameObject.transform.GetChild(0).gameObject.transform.position = Vector3.MoveTowards(transform.parent.gameObject.transform.GetChild(0).gameObject.transform.position, other.gameObject.transform.position, step);
             transform.position = Vector3.MoveTowards(transform.position, other.gameObject.transform.position, step);
             

@@ -108,11 +108,10 @@ public class infectconditionally : MonoBehaviour
         }
         else if(!infected && endpoint1.transform.GetComponent<EndGoalManager>().secondHalf)
         {
-        gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material = myMaterial;
-        gameObject.transform.GetChild(1).gameObject.transform.localScale = new Vector3(5, 0.05f, 5);
-        gameObject.transform.GetChild(1).gameObject.tag = "NPC";
-
-    }
+            gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material = myMaterial;
+            gameObject.transform.GetChild(1).gameObject.transform.localScale = new Vector3(5, 0.05f, 5);
+            gameObject.transform.GetChild(1).gameObject.tag = "NPC";
+        }
     
 
 

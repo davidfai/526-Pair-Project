@@ -15,8 +15,8 @@ public class JumpScareController : MonoBehaviour
     public float jumpScareSpeed = 30f;
     public float delayTime = 0.05f;
     private float step;
-    private bool hasJumpScareOnce = false;
-    private bool canJumpScare = false;
+    public bool hasJumpScareOnce = false;
+    public bool canJumpScare = false;
 
     private void Start()
     {
@@ -28,9 +28,12 @@ public class JumpScareController : MonoBehaviour
     {
         if (!hasJumpScareOnce && canJumpScare)
         {
+            float distance = Vector3.Distance(jumpScareNPC.transform.position, finalPosition.position);
             step = jumpScareSpeed * Time.deltaTime;
+            step = Mathf.Min(step, distance);
             jumpScareNPC.transform.position = Vector3.MoveTowards(jumpScareNPC.transform.position, finalPosition.position, step);
-            if(jumpScareNPC.transform.position == finalPosition.position)
+            
+            if (Vector3.Distance(jumpScareNPC.transform.position, finalPosition.position) < 0.01f)
             {
                 hasJumpScareOnce=true;
                 canJumpScare=false;

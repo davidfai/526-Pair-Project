@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy1up : MonoBehaviour
 {
+    public PlayerMovement playerMovement;
     public bool infected = false;
     public GameObject endpoint1;
     public GameObject player;
@@ -34,8 +35,13 @@ public class Enemy1up : MonoBehaviour
     {
         if (other.CompareTag("infection"))
         {
-            infected = true;
-            transform.GetComponent<Renderer>().material = markNPC;
+            if (!infected)
+            {
+                infected = true;
+                transform.GetComponent<Renderer>().material = markNPC;
+                playerMovement.maxDecals = playerMovement.maxDecals + playerMovement.addDecals;
+            }
+            
         }
         if(endpoint1.transform.GetComponent<EndGoalManager>().secondHalf && infected && other.CompareTag("Player"))
         {

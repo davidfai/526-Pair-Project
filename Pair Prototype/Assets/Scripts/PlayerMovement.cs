@@ -13,12 +13,15 @@ public class PlayerMovement : MonoBehaviour
     // player rotation speed when turning
     public float rotationSpeed = 45.0f; 
     // max number of decals spawned before
-    public int maxDecals = 300;
+    public int maxDecals = 1000;
     // interval of time when next decal is generated
     public float decalSpawnInterval = 0.2f;
     // control the turn speed of the player when moving left to right
     // decal counter
     public int currentDecals = 0;
+    // this will be used to reduce the players decal limit, allowing the
+    // player to have more distance when travelling 
+    public int addDecals;
     // track if player has arrived to end goal 1 (Point B)
     public bool endGoalFlagOne = false; 
     // distance of raycast
