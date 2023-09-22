@@ -1745,7 +1745,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &156306174
 GameObject:
@@ -3799,7 +3799,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -5944,7 +5944,7 @@ GameObject:
   - component: {fileID: 594887863}
   m_Layer: 0
   m_Name: endPoint1
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9301,7 +9301,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &1047761267
 GameObject:
@@ -15715,7 +15715,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &1803310195
 GameObject:
@@ -17399,7 +17399,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &2002390495
 GameObject:
