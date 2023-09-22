@@ -1223,7 +1223,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &113487172
 MonoBehaviour:
@@ -1237,14 +1237,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 1890886929}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &118343731
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,7 +1498,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &129868495
 MonoBehaviour:
@@ -1509,14 +1512,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 1254853868}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &135769440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1725,7 +1731,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &138061287
 MonoBehaviour:
@@ -1739,14 +1745,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 370920215}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &156306174
 GameObject:
   m_ObjectHideFlags: 0
@@ -2502,6 +2511,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 174733771}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &209777880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 209777881}
+  m_Layer: 0
+  m_Name: initialPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &209777881
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209777880}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.6, y: -1.6663737, z: 25.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 447611647}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &217138762
 GameObject:
   m_ObjectHideFlags: 0
@@ -3509,7 +3549,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &286539522
 MonoBehaviour:
@@ -3523,14 +3563,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 2044201423}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &292847993
 GameObject:
   m_ObjectHideFlags: 0
@@ -5127,6 +5170,42 @@ MonoBehaviour:
   posn3: {x: 0, y: 0, z: 0}
   posn4: {x: 0, y: 0, z: 0}
   ink: 1
+--- !u!1 &447611646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 447611647}
+  m_Layer: 0
+  m_Name: Jumpscare (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &447611647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447611646}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0003503263}
+  m_LocalPosition: {x: -29.83, y: 2.6463737, z: -3.1988564}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 638375960}
+  - {fileID: 1716764229}
+  - {fileID: 209777881}
+  - {fileID: 700440674}
+  - {fileID: 1681167725}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 179.96, z: 0}
 --- !u!1 &451681990
 GameObject:
   m_ObjectHideFlags: 0
@@ -6213,6 +6292,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606431977}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &638375959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 638375960}
+  - component: {fileID: 638375962}
+  - component: {fileID: 638375961}
+  m_Layer: 0
+  m_Name: JS trigger zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &638375960
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638375959}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.31, y: -1.6663737, z: 20.77}
+  m_LocalScale: {x: 0.61041, y: 1, z: 1.0727066}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 447611647}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &638375961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638375959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca4302799e8ac4242b3b366ddd764b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpScareNPC: {fileID: 1681167724}
+  initialPosition: {fileID: 209777881}
+  finalPosition: {fileID: 1716764229}
+  playerMovement: {fileID: 1609693894}
+  jumpScareAudio: {fileID: 700440675}
+  jumpScareSpeed: 40
+  delayTime: 0.4
+  hasJumpScareOnce: 0
+  canJumpScare: 0
+--- !u!65 &638375962
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638375959}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 1, z: 11}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &641860544
 GameObject:
   m_ObjectHideFlags: 0
@@ -6554,6 +6708,134 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699642725}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &700440673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 700440674}
+  - component: {fileID: 700440675}
+  m_Layer: 0
+  m_Name: jump Scare Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &700440674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700440673}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.31, y: -1.6663737, z: 20.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 447611647}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &700440675
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700440673}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ae36396ad1eb41f4eb252070f7f0c0b2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &701412835
 GameObject:
   m_ObjectHideFlags: 0
@@ -6885,7 +7167,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &765418437
 MonoBehaviour:
@@ -6899,14 +7181,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 251234957}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &766758141
 GameObject:
   m_ObjectHideFlags: 0
@@ -7469,7 +7754,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &851735118
 MonoBehaviour:
@@ -7483,14 +7768,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 1685046237}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &870833507
 GameObject:
   m_ObjectHideFlags: 0
@@ -7909,7 +8197,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &895566944
 MonoBehaviour:
@@ -7923,14 +8211,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 135769440}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &896672765
 GameObject:
   m_ObjectHideFlags: 0
@@ -8088,7 +8379,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &899110124
 MonoBehaviour:
@@ -8102,14 +8393,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 157814237}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &907301588
 GameObject:
   m_ObjectHideFlags: 0
@@ -8418,7 +8712,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &957891485
 MonoBehaviour:
@@ -8432,14 +8726,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 1636418944}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!224 &962943638 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 972339394030437165, guid: 10ea7afc90e462f4dbfbf0dada56eefd, type: 3}
@@ -8946,7 +9243,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &1013574463
 MonoBehaviour:
@@ -8960,14 +9257,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 1003545565}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &1029071073
 GameObject:
   m_ObjectHideFlags: 0
@@ -9281,7 +9581,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.7
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &1046820884
 MonoBehaviour:
@@ -9295,14 +9595,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 870833507}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &1047761267
 GameObject:
   m_ObjectHideFlags: 0
@@ -9946,7 +10249,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &1193160175
 MonoBehaviour:
@@ -9960,14 +10263,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 1779901472}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &1225798135
 GameObject:
   m_ObjectHideFlags: 0
@@ -10565,7 +10871,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &1255220428
 MonoBehaviour:
@@ -10579,14 +10885,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 7821356}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &1258907766
 GameObject:
   m_ObjectHideFlags: 0
@@ -11108,7 +11417,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &1340305506
 MonoBehaviour:
@@ -11122,14 +11431,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 68650286}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &1341301518
 GameObject:
   m_ObjectHideFlags: 0
@@ -13299,7 +13611,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &1598011495
 MonoBehaviour:
@@ -13313,14 +13625,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 536597259}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &1609693891
 GameObject:
   m_ObjectHideFlags: 0
@@ -13355,8 +13670,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.8871141, b: 0.6179246, a: 1}
-  m_Intensity: 5
-  m_Range: 7
+  m_Intensity: 7
+  m_Range: 5
   m_SpotAngle: 96
   m_InnerSpotAngle: 13
   m_CookieSize: 10
@@ -13450,7 +13765,7 @@ MonoBehaviour:
   decalPrefab: {fileID: 2740402094278259493, guid: 34692bc26d88092499d3c1b2c1e03b32, type: 3}
   rotationSpeed: 720
   maxDecals: 500
-  decalSpawnInterval: 0.7
+  decalSpawnInterval: 0.5
   currentDecals: 0
   addDecals: 50
   endGoalFlagOne: 0
@@ -13534,7 +13849,7 @@ Transform:
   m_GameObject: {fileID: 1609693891}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.41, y: 0.6, z: -33.11}
+  m_LocalPosition: {x: -26.41, y: 0.6, z: -31.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14589,6 +14904,89 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679839098}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1681167724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1681167725}
+  - component: {fileID: 1681167727}
+  - component: {fileID: 1681167726}
+  m_Layer: 0
+  m_Name: npc (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1681167725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681167724}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.31, y: -1.6663737, z: 20.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 447611647}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1681167726
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681167724}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: aaa4d81c8272d1e41993121962541500, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1681167727
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681167724}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1681604726
 GameObject:
   m_ObjectHideFlags: 0
@@ -14635,6 +15033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 1609693894}
   spawnPointOne: {fileID: 1681604727}
+  liveCounter: {fileID: 0}
 --- !u!1 &1685046237
 GameObject:
   m_ObjectHideFlags: 0
@@ -14848,7 +15247,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &1698317183
 MonoBehaviour:
@@ -14862,14 +15261,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 395273855}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &1702465298
 GameObject:
   m_ObjectHideFlags: 0
@@ -14900,6 +15302,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1312372598}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1716764228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1716764229}
+  m_Layer: 0
+  m_Name: finalPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1716764229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716764228}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.2, y: -1.6663737, z: 7.58}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 447611647}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1721346002
 GameObject:
@@ -15621,7 +16054,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &1784662931
 MonoBehaviour:
@@ -15635,14 +16068,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 1029071073}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &1786752484
 GameObject:
   m_ObjectHideFlags: 0
@@ -15695,7 +16131,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &1786752487
 MonoBehaviour:
@@ -15709,14 +16145,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 1660344004}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &1803310195
 GameObject:
   m_ObjectHideFlags: 0
@@ -15947,7 +16386,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &1817646214
 MonoBehaviour:
@@ -15961,14 +16400,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 174733771}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &1819437075
 GameObject:
   m_ObjectHideFlags: 0
@@ -17379,7 +17821,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &1979063969
 MonoBehaviour:
@@ -17393,14 +17835,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 1176926514}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &2002390495
 GameObject:
   m_ObjectHideFlags: 0
@@ -17526,7 +17971,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &2039013115
 MonoBehaviour:
@@ -17540,14 +17985,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 1234004301}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &2044201423
 GameObject:
   m_ObjectHideFlags: 0
@@ -17966,7 +18414,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.8
   m_Center: {x: 0.000000059604645, y: -0.00000047683716, z: -0.00000008940697}
 --- !u!114 &2088476757
 MonoBehaviour:
@@ -17980,14 +18428,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c40570106938b41b7793dd7b50f5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyOfNPC: {fileID: 1841161985}
   endpoint1: {fileID: 594887861}
   infected: 0
   step: 1
+  detectDistance: 0
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
   clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
-  chase: 0
+  canSee: 0
+  isAudioOn: 0
 --- !u!1 &2097974696
 GameObject:
   m_ObjectHideFlags: 0
@@ -18392,8 +18843,9 @@ SceneRoots:
   - {fileID: 1867795928}
   - {fileID: 1312372598}
   - {fileID: 1316175238}
+  - {fileID: 447611647}
   - {fileID: 1878054710}
+  - {fileID: 605457657}
   - {fileID: 1566305153}
   - {fileID: 701412837}
   - {fileID: 1609693898}
-  - {fileID: 605457657}
