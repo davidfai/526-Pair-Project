@@ -1243,7 +1243,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &118343731
 GameObject:
@@ -1515,7 +1515,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &135769440
 GameObject:
@@ -3529,7 +3529,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &292847993
 GameObject:
@@ -6905,7 +6905,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &766758141
 GameObject:
@@ -7489,7 +7489,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &870833507
 GameObject:
@@ -7929,7 +7929,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &896672765
 GameObject:
@@ -8108,7 +8108,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &907301588
 GameObject:
@@ -8438,7 +8438,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!224 &962943638 stripped
 RectTransform:
@@ -8966,7 +8966,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &1029071073
 GameObject:
@@ -9966,7 +9966,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &1225798135
 GameObject:
@@ -10585,7 +10585,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &1258907766
 GameObject:
@@ -11128,7 +11128,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &1341301518
 GameObject:
@@ -13319,7 +13319,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &1609693891
 GameObject:
@@ -14868,7 +14868,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &1702465298
 GameObject:
@@ -15641,7 +15641,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &1786752484
 GameObject:
@@ -15967,7 +15967,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &1819437075
 GameObject:
@@ -17546,7 +17546,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &2044201423
 GameObject:
@@ -17986,7 +17986,7 @@ MonoBehaviour:
   startposn: {x: -3.51, y: -0.04, z: -0.4}
   startposncyl: {x: -3.59, y: 0.42, z: -0.359984}
   audioSource: {fileID: 297470952}
-  clip: {fileID: 8300000, guid: dcd4677ce329c82438dc1e206052404e, type: 3}
+  clip: {fileID: 8300000, guid: 2e68fccaa33abba49a2f5f37b2fac9e5, type: 3}
   chase: 0
 --- !u!1 &2097974696
 GameObject:
